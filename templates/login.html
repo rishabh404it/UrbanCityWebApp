@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <h1 class="jumbotron jumbotron-fluid"><mark>Login To Your Account So That We Can Hear You :) </mark></h1>
+  
+    <h3 ><mark>Please Register First If You Dont Have An Account ! </mark></h3>
+        <form action="register" class="inline">
+        <button class="btn btn-primary" >Click Here To Register</button>
+    </form>
+       <br><br><br><br>
+       <h5 ><mark>Already have an account ? Please login your details !</mark></h5><br>
+       <form action="login" class="form-group" method="POST">
+            {% csrf_token %}
+            <mark> Enter Your Username : </mark><br><br><input type="text" name="username"><br><br>
+            <mark>Enter Your Password : </mark><br><br><input type="password" name="password"><br><br>
+           
+            <button type="submit" id='two' class="btn btn-success">Submit</button>
+    </form>   
+    <div>{% for message in messages %}
+    
+           <script>alert('{{message}}');</script>
+                      
+         {% endfor %} 
+    </div>   
+</body>
+</html>
+<script>
+    document.body.style.backgroundImage = "url({% static 'images/loginnewpic.jpg' %})";
+</script>

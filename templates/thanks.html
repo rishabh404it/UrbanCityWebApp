@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Feedback </title>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'form/images/icons/favicon.ico' %}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'form/css/main.css' %}">
+
+<body>
+<div class="jumbotron text-center">
+    <h1 class="display-3">Thank You!</h1>
+    <p class="lead"><strong>Application Recieved Successfully.</strong><br> We'll make sure the govt gets notified.</p>
+    <hr>
+    <p>
+      Having trouble? <a href="">Contact us</a>
+    </p>
+    <p class="lead">
+      <a class="btn btn-primary btn-sm" href="{% url 'index' %}" role="button">Continue to homepage</a>
+    </p>
+  </div>
+
+  </body>

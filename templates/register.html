@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Registration</title>
+</head>
+<body>
+    <h1 class="jumbotron jumbotron-fluid"><mark></mark>Register With US !</mark></h1>
+  
+       
+    <form action="register" class="form-group" method="POST">
+        {% csrf_token %}
+        <strong> Enter First Name : </strong><input class="form-group" type="text" id="one" name="first_name" rrequired="required"><br>
+        <strong> Enter Last Name : </strong><input class="form-group" type="text" id="one" name="last_name"required="required"><br>
+        <strong> Create your username : </strong><input class="form-group" type="text" id="one" name="username"required="required"><br>
+        <strong> Create Your password : </strong><input class="form-group" placeholder="Minimum 6 digits" type="password" id="one" name="password1"required="required"><br>
+        <strong> Confirm Your password: </strong><input class="form-group" type="password" id="one" name="password2"required="required"><br>
+       <strong>Provide Your Email : </strong><input class="form-group" type="email" id="one" name="email"required="required"><br>
+       <button type="submit" id='two' class="btn btn-danger btn-lg">Submit</button><br><br><br>
+    </form>  <br>
+    
+   
+    <h3 ><mark>Already have an account ? </mark></h3>
+    <form action="login" class="inline">
+    <button class="btn btn-primary" >Login Here</button>
+     
+    
+    <div><h3> {% for message in messages %}
+
+        <script>alert('{{message}}');</script>
+                  
+              {% endfor %} 
+         </h3>
+          
+    </div>
+</body>
+</html>
+<script>
+ document.body.style.backgroundImage = "url({% static 'images/202703.jpg' %})";
+
+</script>

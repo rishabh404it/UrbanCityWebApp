@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>user profile form Responsive Widget Template :: W3layouts</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Profile Form A Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link href="{% static 'profile/css/style.css' %}" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="{% static 'profile/css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+<!-- //css files -->
+<!-- online-fonts -->
+<link href="{% static 'profile//fonts.googleapis.com/css?family=Raleway' %}" rel="stylesheet">
+<link href="{% static 'profile//fonts.googleapis.com/css?family=Lato' %}" rel="stylesheet">
+<!--//online-fonts -->
+</head>
+<body>
+{% if user.is_authenticated %}
+<div class="header">
+	<h1>User Profile</h1>
+</div>
+<div class="w3-main">
+		<div class="form-w3l">
+			<div class="img">
+				<h2>Informations</h2>
+			</div>	
+			<form action="email" method="post">
+				<div class="w3l-user">
+					<span><i class="fa fa-user-circle-o w3l-1" aria-hidden="true">Name:</i></span>
+					<div class="clear">{{user.first_name}}{{user.last_name}}</div>
+				</div>
+				
+				<div class="w3l-password">
+					<span><i class="fa fa-lock w3l-2" aria-hidden="true">Email:</i></span>
+				
+					<div class="clear">{{user.email}}</div>
+				</div>
+				
+				<div class="w3l-email">
+					<span><i class="fa fa-envelope-o w3l-3" aria-hidden="true">Username:</i></span>
+					<div name="Date Joined"class="clear">{{user.username}}</div>
+				</div>
+
+				<div class="w3l-email">
+					<span><i class="fa fa-envelope-o w3l-3" aria-hidden="true">UserID:</i></span>
+					<div name="Date Joined"class="clear">{{user.id}}</div>
+				</div>
+				
+				<div class="w3l-phone">	
+					<span><i class="fa fa-mobile w3l-4" aria-hidden="true">Date Joined:</i></span>
+					<div class="clear">{{user.date_joined}}</div>
+				</div>
+				
+				<div class="w3l-btn">
+					
+				</div>
+			
+         
+			</form>
+		</div>
+	
+
+
+<footer>
+&copy; 2020 User Profile Informations. All rights reserved </a>
+</footer>
+{% endif %}	
+</body>
+</html>

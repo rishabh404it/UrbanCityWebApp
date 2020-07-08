@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Feedback </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'form/images/icons/favicon.ico' %}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'form/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
+
+		<div class="wrap-contact100">
+			<form action="issues_info" class="contact100-form validate-form" method="POST">
+				{% csrf_token %}
+				<span class="contact100-form-title">
+					Please provide us with your Issue ! 
+				</span>
+                
+				<div class="wrap-input100 validate-input" data-validate="Please enter your name">
+					<input class="input100" type="text" name="Name" placeholder="Please enter your Full Name" required='required'>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Please enter your name">
+					<input class="input100" type="text" name="CityName" placeholder="Please enter your City Name" required='required'>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Please enter email: e@a.x">
+				<strong>Upload Your Profile Picture:</strong><br><input type="file" multiple accept='image/*' name="Img" placeholder="Upload your photo" required='required'>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Please enter your message">
+					<textarea class="input100" name="Desc" placeholder="Give an indepth detail about the problems facing by your city" required='required'></textarea>
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 validate-input" data-validate = "Please enter picture">
+					<strong>Upload Area Affected Pictures:</strong><br><input type="file" multiple accept='image/*' name="affectImg" placeholder="Upload your photo" >
+						<span class="focus-input100"></span>
+					</div>
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn" >
+						Submit Your Feedback
+					</button>
+				
+				</ul>	
+				</div>
+			</form>
+			{% for message in messages %}
+    
+           <script>alert('{{message}}');</script>
+                      
+         {% endfor %} 
+
+			<div class="contact100-more">
+				Contact our 24/7 call center: <span class="contact100-more-highlight">+91 7011452716 </span>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="{% static 'form/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'form/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'form/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'form/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'form/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'form/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'form/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'form/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes' %}"></script>
+	<script src="{% static 'form/js/map-custom.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'form/js/main.js' %}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="{% static 'https://www.googletagmanager.com/gtag/js?id=UA-23581568-13' %}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  document.body.style.backgroundImage = "url({% static 'images/login6.jpg' %})";
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
